@@ -1,6 +1,6 @@
 function ContentNav() {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-gradient-to-br from-slate-900 to-indigo-600 p-6">
+    <nav className="h-min flex items-center justify-between flex-wrap bg-gradient-to-br from-slate-900 to-indigo-600 p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <a href="/" className="font-semibold text-xl tracking-tight">
           {"Alejandro's Portfolio"}

@@ -1,3 +1,9 @@
+import { Hero } from "@/components/Hero.server";
+
 export default function Home() {
-  return <main> Hello!!</main>;
+  return (
+    <main className="align-middle h-full">
+      <Hero />
+    </main>
+  );
 }

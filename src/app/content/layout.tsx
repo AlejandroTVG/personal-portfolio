@@ -8,10 +8,12 @@ export default function contentLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-slate-900 to-indigo-600 ">
+      <body className=" h-full grid grid-rows-2 grid-rows-max">
         <ContentNav />
-        <SideBar />
-        {children}
+        <div className="grid grid-cols-2 h-full">
+          <SideBar />
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 export default function SideBar() {
   return (
-    <aside className="bg-gray-800 text-white w-64 min-h-screen p-4">
+    <aside className="bg-gray-800 text-white w-64 p-4">
       <nav>
         <ul className="space-y-2">
           <li className="opcion-con-desplegable">

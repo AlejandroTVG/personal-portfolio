@@ -9,7 +9,8 @@
 			"extensions": [
 				"ms-vscode.vscode-typescript-next",
 				"esbenp.prettier-vscode",
-				"PulkitGangwar.nextjs-snippets"
+				"PulkitGangwar.nextjs-snippets",
+				"bradlc.vscode-tailwindcss"
 			]
 		}
 	}
