@@ -1,7 +1,10 @@
 "use client";
 import React from "react";
+import dynamic from "next/dynamic";
 import Accordion from "./ButtonAccordion.client";
-import ParticlesBg from "particles-bg";
+
+// Dynamically import ParticlesBg with SSR disabled
+const ParticlesBg = dynamic(() => import("particles-bg"), { ssr: false });
 
 function ContentNav() {
   return (

@@ -2,23 +2,30 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
-import ProfileSection from "./ProfileSection.client";
+import dynamic from "next/dynamic";
+
+// Dynamically import ProfileSection with SSR disabled due to ParticlesBG needing access to the Window obj.
+const ProfileSection = dynamic(() => import("./ProfileSection.client"), {
+  ssr: false,
+});
 
 export default function SideBar() {
   const [sectionSelected, setSectionSelected] = useState("about-me");
 
   return (
-    <nav>
-      <ProfileSection />
-      <ul>
+    <nav className="h-full">
+      <div className="h-2/5 bg-slate-50">
+        <ProfileSection />
+      </div>
+      <ul className="grid h-3/5 justify-items-stretch">
         <li>
           <Link
             onClick={() => {
               setSectionSelected("about-me");
               console.log(sectionSelected);
             }}
-            className={`bg-slate-50 p-5 flex justify-center cursor-pointer hover:bg-slate-900 hover:text-slate-100 transition-all duration-500 ${
-              sectionSelected === "about-me" ? "bg-slate-500" : "bg-slate-50"
+            className={`${liStyle} ${
+              sectionSelected === "about-me" ? "bg-transparent" : "bg-slate-50"
             }`}
             href="/content/">
             About Me
@@ -30,8 +37,8 @@ export default function SideBar() {
               setSectionSelected("projects");
               console.log(sectionSelected);
             }}
-            className={`bg-slate-50 p-5 flex justify-center cursor-pointer hover:bg-slate-900 hover:text-slate-100 transition-all duration-500 ${
-              sectionSelected === "projects" ? "bg-slate-500" : "bg-slate-50"
+            className={`${liStyle} ${
+              sectionSelected === "projects" ? "bg-transparent" : "bg-slate-50"
             }`}
             href="/content/projects">
             Projects
@@ -43,8 +50,8 @@ export default function SideBar() {
               setSectionSelected("resume");
               console.log(sectionSelected);
             }}
-            className={`bg-slate-50 p-5 flex justify-center cursor-pointer hover:bg-slate-900 hover:text-slate-100 transition-all duration-500 ${
-              sectionSelected === "resume" ? "bg-slate-500" : "bg-slate-50"
+            className={`${liStyle} ${
+              sectionSelected === "resume" ? "bg-transparent" : "bg-slate-50"
             }`}
             href="/content/resume">
             Resume
@@ -56,9 +63,9 @@ export default function SideBar() {
               setSectionSelected("certifications");
               console.log(sectionSelected);
             }}
-            className={`bg-slate-50 p-5 flex justify-center cursor-pointer hover:bg-slate-900 hover:text-slate-100 transition-all duration-500 ${
+            className={`${liStyle} ${
               sectionSelected === "certifications"
-                ? "bg-slate-500"
+                ? "bg-transparent"
                 : "bg-slate-50"
             }`}
             href="/content/certifications">
@@ -69,3 +76,6 @@ export default function SideBar() {
     </nav>
   );
 }
+
+const liStyle =
+  "flex h-full items-center justify-center cursor-pointer hover:bg-slate-900 hover:text-slate-100 transition-all duration-500";

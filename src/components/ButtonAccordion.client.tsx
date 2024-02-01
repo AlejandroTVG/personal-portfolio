@@ -11,10 +11,10 @@ const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
   return (
     <div
       className={` overflow-hidden flex items-center transition-transform duration-500 ease-in-out h-full ${
-        isOpen ? "translate-x-0" : "translate-x-80"
+        isOpen ? "translate-x-0" : "translate-x-72"
       }`}>
       <button
-        className="bg-blue-500 text-white font-semibold p-3 h-full pr-5 ml-2 rounded-l-lg"
+        className="bg-blue-500 text-white font-semibold p-3 pl-4 h-full pr-1 ml-2 rounded-l-lg"
         onClick={() => setIsOpen(!isOpen)}>
         {title}
       </button>
