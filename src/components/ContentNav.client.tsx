@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
 import Accordion from "./ButtonAccordion.client";
+import ParticlesBg from "particles-bg";
 
 function ContentNav() {
   return (
-    <nav className="h-min flex items-center justify-between flex-wrap bg-gradient-to-br from-slate-900 to-indigo-600">
-      <div className="p-6">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <a href="/" className="font-semibold text-xl tracking-tight ">
-            {"Alejandro's Portfolio"}
-          </a>
-        </div>
+    <div className="h-24 flex flex-row justify-between bg-transparent overflow-hidden items-center">
+      <div className="flex ml-6 items-center text-black p-6 bg-white h-10 rounded-lg transition ease-in-out  hover:scale-110  duration-300">
+        <a href="/" className="font-semibold text-xl tracking-tight ">
+          {"Alejandro's Portfolio"}
+        </a>
       </div>
       <div className="h-full">
         <Accordion title="Contact info">
@@ -20,7 +19,10 @@ function ContentNav() {
           </div>
         </Accordion>
       </div>
-    </nav>
+      <div className="h-24 w-full absolute p-0 -z-10">
+        <ParticlesBg type="circle" num={10} />
+      </div>
+    </div>
   );
 }
 

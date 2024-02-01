@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.particles-bg-canvas-self {
+  position: relative;
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+}

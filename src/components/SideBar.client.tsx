@@ -2,12 +2,14 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import ProfileSection from "./ProfileSection.client";
 
 export default function SideBar() {
   const [sectionSelected, setSectionSelected] = useState("about-me");
 
   return (
     <nav>
+      <ProfileSection />
       <ul>
         <li>
           <Link
